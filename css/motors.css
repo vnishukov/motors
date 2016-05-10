@@ -1,0 +1,56 @@
+#navbar {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: white;
+}
+
+.tel {
+    float: right;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: white;
+}
+
+.promo {
+    height: 500px;
+    margin-top: 50px;
+    background: #262424 url("../images/header_bg.jpg") center no-repeat;
+}
+
+.promo-header {
+    color: white;
+    margin-top: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.promo-panel {
+    height: 400px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.promo-panel .panel-body {
+    text-align: center;
+}
+
+.promo-panel-inputs {
+    line-height: 2em;
+}
+
+.promo-panel-inputs input {
+    text-transform: uppercase;
+    height: 50px;
+    margin-bottom: 20px;
+}
