@@ -1,8 +1,11 @@
-body, nav {
+body {
     min-width: 400px;
+    padding-top: 50px;
 }
 
-#navbar {
+nav {
+    min-width: 400px;
+    white-space: nowrap;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -15,28 +18,24 @@ body, nav {
 
 .tel {
     float: right;
-    height: 50px;
-    padding: 15px 15px;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 1.5em;
+    margin-top: 10px;
     color: white;
 }
 
 .promo {
-    /*height: 500px;*/
-    /*margin-top: 50px;*/
     background: #262424 url("../images/header_bg.jpg") center no-repeat;
 }
 
 .promo-header {
     color: white;
-    margin-top: 130px;
+    margin-top: 80px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .promo-panel {
-    margin-top: 70px;
+    margin-top: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -53,4 +52,29 @@ body, nav {
     text-transform: uppercase;
     height: 50px;
     margin-bottom: 20px;
+}
+
+.order {
+    height: 500px;
+    background: red;
+}
+
+.labels {
+    height: 500px;
+    background: green;
+}
+
+.feedback {
+    height: 500px;
+    background: cyan;
+}
+
+.contacts {
+    height: 500px;
+    background: violet;
+}
+
+.footer .navbar {
+    margin: 0;
+    border-radius: 0;
 }
