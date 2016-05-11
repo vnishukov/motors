@@ -1,14 +1,15 @@
+body, nav {
+    min-width: 400px;
+}
+
 #navbar {
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .brand {
-    float: left;
-    height: 50px;
-    padding: 15px 15px;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 1.5em;
+    margin-top: 10px;
     color: white;
 }
 
@@ -35,7 +36,6 @@
 }
 
 .promo-panel {
-    height: 400px;
     margin-top: 50px;
     text-transform: uppercase;
     font-weight: bold;

@@ -19,36 +19,44 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
-                <div class="navbar-header">
-                    <span class="brand"><i class="fa fa-cogs fa-lg" aria-hidden="true"></i> Адъские моторы</span>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                            aria-expanded="false" aria-controls="navbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
+
+            <div class="hidden-xs col-sm-1 hidden-md hidden-lg">
+                <div class="brand"><i class="fa fa-cogs fa-lg"></i></div>
             </div>
-            <div class="col-lg-6">
+
+            <div class="col-xs-11 hidden-sm col-md-3 col-lg-3">
+                <div class="brand"><i class="fa fa-cogs fa-lg"></i> Адъские моторы</div>
+            </div>
+
+            <div class="col-xs-1 hidden-sm hidden-md hidden-lg">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="col-xs-12 col-sm-11 col-md-9 col-lg-6">
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Марки авто</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#promo">Главная</a></li>
+                        <li><a href="#order">Заявка</a></li>
+                        <li><a href="#labels">Марки авто</a></li>
+                        <li><a href="#feedback">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3">
+
+            <div class="hidden-xs hidden-sm hidden-md col-lg-3">
                 <span class="tel">8 (499) 703-48-98</span>
             </div>
+
         </div>
-    </div>
 </nav>
 
-
-<div class="promo">
+<div id="promo" class="promo row">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -73,6 +81,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="order" class="order">
+    Order
 </div>
 
 <div class="container">
