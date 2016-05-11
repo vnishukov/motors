@@ -41,9 +41,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#promo">Главная</a></li>
-                        <li><a href="#order">Заявка</a></li>
                         <li><a href="#labels">Марки авто</a></li>
-                        <li><a href="#feedback">Отзывы</a></li>
                         <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </div>
@@ -86,25 +84,15 @@
     </div>
 </div>
 
-<div id="order" class="order">
+<div id="labels" class="labels odd">
     <div class="container">
-        <div class="row">Order</div>
+        <h1 class="text-center"><strong>Мы работаем с марками авто:</strong></h1>
+        <hr>
+        <div id="cars-logos"></div>
     </div>
 </div>
 
-<div id="labels" class="labels">
-    <div class="container">
-        <div class="row">Labels</div>
-    </div>
-</div>
-
-<div id="feedback" class="feedback">
-    <div class="container">
-        <div class="row">Feedback</div>
-    </div>
-</div>
-
-<div id="contacts" class="contacts">
+<div id="contacts" class="contacts even">
     <div class="container">
         <div class="row">Contacts</div>
     </div>
@@ -138,12 +126,28 @@
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 
 <script>
-    $('nav a').click(function (e) {
-        e.preventDefault();
-        var chapter = $(e.target).prop('href').split('#')[1],
-                chapterPosition = $('#' + chapter).position().top,
-                bodyOffset = parseInt($('body').css('padding-top'));
-        $("html, body").animate({scrollTop: chapterPosition - bodyOffset}, 500);
+    $(document).ready(function () {
+        $('nav a').click(function (e) {
+            e.preventDefault();
+            var chapter = $(e.target).prop('href').split('#')[1],
+                    chapterPosition = $('#' + chapter).position().top,
+                    bodyOffset = parseInt($('body').css('padding-top'));
+            $("html, body").animate({scrollTop: chapterPosition - bodyOffset}, 500);
+        });
+
+        var carsLogosContent = '<div class="row">';
+        for (var i = 1; i <= 54; i++) {
+            if (i % 6 == 0 && i < 54) carsLogosContent += '</div><div class="row">';
+
+            carsLogosContent +=
+                    '<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                    '<img style="width:100px; margin: 10px" src="images/logo_car/lc_' + i + '.png"/>' +
+                    '</div>';
+
+            if (i == 54) carsLogosContent += '</div>';
+        }
+
+        $('#cars-logos').html(carsLogosContent);
     });
 </script>
 

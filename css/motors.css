@@ -1,10 +1,10 @@
 body {
-    min-width: 400px;
+    min-width: 600px;
     padding-top: 50px;
 }
 
 nav {
-    min-width: 400px;
+    min-width: 600px;
     white-space: nowrap;
     text-transform: uppercase;
     font-weight: bold;
@@ -55,26 +55,33 @@ nav {
 }
 
 .order {
-    height: 500px;
+    height: 550px;
     background: red;
 }
 
 .labels {
-    height: 500px;
-    background: green;
+
 }
 
 .feedback {
-    height: 500px;
+    height: 550px;
     background: cyan;
 }
 
 .contacts {
-    height: 500px;
+    height: 550px;
     background: violet;
 }
 
 .footer .navbar {
     margin: 0;
     border-radius: 0;
+}
+
+.even {
+    background: #bcbcbc;
+}
+
+.odd {
+    background: #ffffff;
 }
