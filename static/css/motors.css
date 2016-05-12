@@ -24,7 +24,7 @@ nav {
 }
 
 .promo {
-    background: #262424 url("../images/header_bg.jpg") center no-repeat;
+    background: #262424 url("../images/motor2.jpg") center no-repeat;
 }
 
 .promo-header {
@@ -42,6 +42,7 @@ nav {
 
 .promo-panel .panel-body {
     text-align: center;
+    method: post;
 }
 
 .promo-panel-inputs {

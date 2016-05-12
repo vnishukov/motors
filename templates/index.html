@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="css/motors.css" rel="stylesheet">
-    <title>Адъские моторы</title>
+    <link rel="icon" href="static/images/favicon.ico">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="static/css/motors.css" rel="stylesheet">
+    <title>Автозапчасти опт и розница</title>
 </head>
 
 <body>
+
+{% for category, message in get_flashed_messages(with_categories=true) %}
+<div class="alert alert-{{ category }}">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{ message.decode('utf-8') }}
+</div>
+{% endfor %}
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="row">
 
             <div class="col-xs-11 col-sm-6 col-md-4 col-lg-3">
-                <div class="brand"><i class="fa fa-cogs fa-lg"></i> Адъские моторы</div>
+                <div class="brand"><i class="fa fa-cogs fa-lg"></i> Автозапчасти</div>
             </div>
 
             <div class="col-xs-1 hidden-sm hidden-md hidden-lg">
@@ -44,7 +51,7 @@
             </div>
 
             <div class="hidden-xs hidden-sm col-md-3 col-lg-3">
-                <div class="tel">8 (499) 703-48-98</div>
+                <div class="tel">+7 (831) 424-11-30 </div>
             </div>
 
         </div>
@@ -58,7 +65,7 @@
             <div class="hidden-xs col-sm-7 col-md-7 col-lg-7">
                 <div class="promo-header">
                     <span style="font-size: 3em">Продажа контрактных<br>б/у двигателей</span><br>
-                    <span style="font-size: 2em">без пробега по РФ</span>
+                    <span style="font-size: 2em">опт - розница</span>
                 </div>
             </div>
 
@@ -67,11 +74,14 @@
                     <div class="panel-body">
                         <span style="font-size: 2em">Оставьте заявку</span><br>
                         <span>И узнайте стоимость и наличие<br>Вашего двигателя</span><br><br>
+                        <form action="/req" method="post">
                         <div class="promo-panel-inputs">
-                            <input type="text" class="form-control" placeholder="Марка и модель авто">
-                            <input type="text" class="form-control" placeholder="Вин код или номер кузова">
-                            <input type="text" class="form-control" placeholder="Номер телефона">
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Узнать стоимость</a>
+                            <input type="text" class="form-control" placeholder="Марка и модель авто" name=model>
+                            <input type="text" class="form-control" placeholder="Вин код или номер кузова" name=vin>
+                            <input type="text" class="form-control" placeholder="Номер телефона" name=tel>
+                            <input type="submit" class="btn btn-primary btn-lg" value="Узнать стоимость">
+                            <!--<a class="btn btn-primary btn-lg" href="/req" role="button">Узнать стоимость</a>-->
+                            </form>                            
                         </div>
                     </div>
                 </div>
@@ -90,7 +100,34 @@
 
 <div id="contacts" class="contacts even">
     <div class="container">
-        <div class="row">Contacts</div>
+
+                <div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
+                    <div class="brand"><i class="fa fa-cogs fa-lg"></i>Контакты</div>
+                </div>
+            <div class="row">                
+                <div class="hidden-xs col-sm-7 col-md-7 col-lg-">
+                    <div class="tel">
+                    г Нижний Новгород. ул Электрическая 2 здания "ТехОсмотр" 
+                    </div>
+
+                    <a href=https://maps.yandex.ru/?um=constructor:lamif60pkPFjPmXe7eo3Sm-u9wNxMDft&source=constructor target=_blank><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=lamif60pkPFjPmXe7eo3Sm-u9wNxMDft&width=600&height=450&lang=ru_RU&sourceType=constructor" alt="г Нижний Новгород. ул Электрическая 2 здания ТехОсмотр" style="border: 0;" /></a> 
+                </div>
+
+                <div class="col-xs-11 col-sm-5 col-md-5 col-lg-5">
+                    <div class="tel">
+                    <a mailto:rms.ilya@mail.ru>rms.ilya@mail.ru<br>
+                    <a mailto:zip@autozap.su>zip@autozap.su<br>
+                    </div>                                 
+                </div> 
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+                    <div class="tel">
+                    +7 (831) 424-11-30<br>
+                    +7 (831) 424-11-40<br>
+                    +7 910 149 7999<br>
+                    +7 910 149 6999<br>
+                    </div>                               
+                </div>
+            </div>
     </div>
 </div>
 
@@ -104,22 +141,17 @@
                 </div>
 
                 <div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-                    <div class="brand"><i class="fa fa-cogs fa-lg"></i> Адъские моторы</div>
+                    <div class="brand"><i class="fa fa-cogs fa-lg"></i>Автозапчасти</div>
                 </div>
-
-                <div class="col-xs-11 col-sm-6 col-md-6 col-lg-6">
-                    <div class="tel">8 (499) 703-48-98</div>
-                </div>
-
             </div>
         </div>
     </nav>
 </div>
 
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/ie10-viewport-bug-workaround.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -135,7 +167,7 @@
         for (var i = 1; i <= 54; i++) {
             carsLogosContent +=
                     '<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
-                    '<img style="width:100px;margin:10px" src="images/logo_car/lc_' + i + '.png"/>' +
+                    '<img style="width:100px;margin:10px" src="static/images/logo_car/lc_' + i + '.png"/>' +
                     '</div>';
             if (i % 6 == 0 && i < 54) carsLogosContent += '</div><div class="row">';
             if (i == 54) carsLogosContent += '</div>';
