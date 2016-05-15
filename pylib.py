@@ -110,21 +110,24 @@ def image2text(filepath, lang='rus'):
         print pytesseract.image_to_string(Image.open(filepath), lang=lang)
         return pytesseract.image_to_string(Image.open(filepath), lang=lang)
 
-def send_email(subj, message, toemail, fromemail="user@mail.ru"):
+def send_email(subj, message, toemail="bymotornn@gmail.com", fromemail="bymotornn@mail.ru"):
     import smtplib
     from email.mime.text import MIMEText
     msg = MIMEText(message)
     msg['Subject'] = subj
     msg['From'] = fromemail
     msg['To'] = toemail
-    username = 'krozin@mail.ru'
-    password = 'password'
+    username = 'bymotornn@gmail.com'
+    username = 'bymotornn@mail.ru'
+    password = 'NN654321'
+
 
     # The actual mail send
+    s = smtplib.SMTP("smtp.gmail.com:587")
     s = smtplib.SMTP("smtp.mail.ru:25")
     s.starttls()
     s.login(username,password)
-    s.sendmail(fromemail, toemail, message)
+    s.sendmail(fromemail, toemail, msg.as_string())
     s.quit()
 
 def distance(astr, bstr):

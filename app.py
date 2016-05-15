@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, url_for, redirect, flash
 import pylib
+import datetime
 
 app = Flask(__name__)
 # Create dummy secrey key so we can use sessions
@@ -18,9 +19,12 @@ def customer_request():
     vin = request.form['vin'].encode('utf-8')
     tel = request.form['tel'].encode('utf-8')
     message = "Сообщение отослано. модель={}  vin={}  тел={}".format(model, vin, tel)
-    subj = "заказ"
+    email_message = "Bремя заявки={}\nМодель={}\nVIN={}\nТелефон={}\n".format(
+        datetime.datetime.now().strftime("%Y-%B-%d %H:%M:%S"),
+        model, vin, tel)
+    subj = "Заявка с сайта bymotor.ru"
     flash (message)
-    pylib.send_email(subj, message, 'krozin@mail.ru')
+    pylib.send_email(subj, email_message)
     return redirect(url_for('webprint'))
 
 if __name__ == '__main__':
